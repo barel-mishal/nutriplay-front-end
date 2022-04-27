@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="he"  dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- edit names model -->
+              <div class="row g-3">
+                <div class="col-12">
+                  <h6>שם ארוחה</h6>
+                  <div class="input-group col-12 flex-row-reverse">
+                    <input type="text" class="form-control" placeholder="" aria-label="Meal" aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2">ארוחת</span>               
+                  </div>
+                </div>
+                <div class="col-12">
+                  <h6>זמן</h6>
+                  <input type="time" class='form-control' value="">
+                </div>
+                <div class="col-12">
+                  <h6>תאריך</h6>
+                  <input type="date" class='form-control' value="">
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col">אין מוצרים</div>
+      <div class="col"><a href="step1.html">אחרי הוספה של מוצר ראשון</a></div>
+      <div class="col"><a href="step2.html">אחרי הוספה של עוד מוצר</a></div>
+      <div class="col"><a href="step3.html">אחרי הוספה של עוד ארוחה</a></div>
+    </div>
+    <div class="container">
+      <div class="container-fluid ps-0 pe-0">
+        <div id="app" class="text-end">
+          <h1><strong>נוטריפליי</strong></h1>
+        </div>
+        <div id='search-input' class="input-group mb-3">
+          <input type="text" class='form-control' value="" placeholder="חיפוש">
+        </div>
+        <!-- view of product -->
+        <div class="row">
+          <div class="">   
+            <button class="btn btn-primary">הוסף ארוחה</button>     
+          </div>
+          <h6>הראה מוצרים כ: </h6>
+          <div class="btn-group flex-row-reverse" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">כל הנוטרינטים</label>
+            
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">כמות וקלוריות</label>
+            
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">רשימה</label>
+          </div>
+        </div>
+        <!-- accordion -->
+        <!-- meals -->
+        <h2><strong>ארוחות</strong></h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">              
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h4>
+                <a type="button" id="edit-meal-id" data-bs-toggle="modal" data-bs-target="#exampleModal">ערוך</a>
+                  ארוחת צהרים 27/4/22-15:00
+                </h4>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <!-- product -->
+                <h2><strong>מוצרים</strong></h2>
+                <hr>
+                <div class="container-fluid row ps-0 pe-0">
+                  <h4 class="col-8"><strong>סלט ישראלי חלומי</strong></h4>
+                  <button class="btn col-4 text-start">
+                    <svg style="fill: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <hr>
+                <div class="container-fluid row ps-0 pe-0">
+                  <h4 class="col-8"><strong>חביתה</strong></h4>
+                  <button class="btn col-4 text-start">
+                    <svg style="fill: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <hr>
+                <div class="container-fluid row ps-0 pe-0">
+                  <h4 class="col-8"><strong>גבינה לבנה</strong></h4>
+                  <button class="btn col-4 text-start">
+                    <svg style="fill: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    </div>
+    <!-- scripts -->
+    <script type="module" src="/src/main.ts"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
+  </body>
+</html>
+
