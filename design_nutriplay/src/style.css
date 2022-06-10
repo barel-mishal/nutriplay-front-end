@@ -24,13 +24,13 @@ body {
 
 h3 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #076A4E;
 }
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #076A4E;
   margin: 0;
   padding: 0;
@@ -79,18 +79,41 @@ h2 {
 
 /* search  */
 .search-container {
+  padding-left: 2vh;
+  padding-right: 2vh;
   display: grid;
-  grid-template-columns: 20px 1fr 2fr;
+  gap: 15px;
 }
 
 .search-inp-cont {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
 
+
+/* Fluid Columns Snippet */
+.cards-container {
+  padding-left: 2vh;
+  padding-right: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  border: 5px #076A4E solid;
+  border-radius: 0.5rem;  
+}
+
+.footer {
+  display: grid;
+  grid-template-rows: 200px;
 }
 
 @media only screen and (max-width: 550px) {
   .header-logo {
+    height: 150px;
     background-clip: text;  
     font-size: 2rem;
     font-weight: 800;
@@ -98,29 +121,19 @@ h2 {
     }
 }
 
+@media only screen and (max-width: 600px) {
+  /* Fluid Columns Snippet */
+  .cards-container {
+    padding-left: 2vh;
+    padding-right: 2vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .search-inp-cont {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-/* Fluid Columns Snippet */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  /* This is better for small screens, once min() is better supported */
-  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
-  gap: 1rem;
 }
 
-.cards-container {
-  display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
-  /* This is better for small screens, once min() is better supported */
-  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
-  gap: 1rem;
-  background-color: #A045B7;
-  border-radius: 0.5rem;
-  border-color: #000000;
-  
-}
-
-.footer {
-  display: grid;
-  grid-template-rows: 200px;
-}
