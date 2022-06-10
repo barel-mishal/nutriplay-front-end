@@ -1,8 +1,126 @@
-#app {
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700;800&family=Inter:wght@800&display=swap');
+
+:root {
+  --color-nav-bg: rgb(248,251,248);
+  --gradient-background: linear-gradient(50deg, rgba(248,251,248,1) -100%, rgba(192,245,230,1) 100%);
+  --gradient-backgroud-title: linear-gradient(99.02deg, #A045B7 29.03%, #076A4E 107.64%);
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: 'Assistant';
+}
+
+body {
+  background: var(--gradient-background); 
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #076A4E;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #076A4E;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-nav-bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+/* header */
+.header-container {
+  display: grid;
+  justify-items: stretch;
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-areas:
+  "a"
+  "b";
+}
+
+.header-sub-title {
+  grid-area: b;
+  place-self: start center;
+}
+
+.header-logo {
+  grid-area: a;
+  height: 230px;
+  background-clip: text;  
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.gradient {
+  background: var( --gradient-backgroud-title );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* search  */
+.search-container {
+  display: grid;
+  grid-template-columns: 20px 1fr 2fr;
+}
+
+.search-inp-cont {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+@media only screen and (max-width: 550px) {
+  .header-logo {
+    background-clip: text;  
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    }
+}
+
+
+/* Fluid Columns Snippet */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* This is better for small screens, once min() is better supported */
+  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+  gap: 1rem;
+}
+
+.cards-container {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  /* This is better for small screens, once min() is better supported */
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 1rem;
+  background-color: #A045B7;
+  border-radius: 0.5rem;
+  border-color: #000000;
+  
+}
+
+.footer {
+  display: grid;
+  grid-template-rows: 200px;
 }
